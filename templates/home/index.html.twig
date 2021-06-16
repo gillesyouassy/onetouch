@@ -16,21 +16,6 @@
         <li>Your controller at <code><a href="{{ 'C:/Users/carlos/mylove/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/Users/carlos/mylove/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
     </ul>
-     {% if controller_number % 2 == 0 %}
-        Element pair
-    {% else %}
-        Element impair
-    {% endif %}
-
-    <table>
-        {% for i in 1..10 %}
-        <tr>
-              <td> {{controller_number}} x {{i}} =  {{controller_number * i}} </td>
-        </tr>
-        {% endfor %}
-
-
-    </table>
     
 </div>
 {% endblock %}
