@@ -1,0 +1,329 @@
+{% extends 'onetech.html.twig' %}
+
+{% block title %} Mobiles {{brand.name}} {% endblock %}
+
+
+{% block stylesheets %}
+		<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/styles/bootstrap4/bootstrap.min.css">
+		<link href="http://127.0.0.1:8000/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+		<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+		<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/plugins/OwlCarousel2-2.2.1/animate.css">
+		<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/styles/shop_styles.css">
+        <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/styles/shop_responsive.css">
+{% endblock %}
+
+{% block content %}
+
+
+
+		<nav class="main_nav">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						
+						<div class="main_nav_content d-flex flex-row">
+
+							<!-- Categories Menu -->
+
+							<div class="cat_menu_container">
+								<div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
+									<div class="cat_burger"><span></span><span></span><span></span></div>
+									<div class="cat_menu_text">categories</div>
+								</div>
+
+								<ul class="cat_menu">
+								    	{% for brand in brands %}
+									     <li><a href="#"> {{brand.name}} <img width="40px" src="{{brand.logo}}" class="fas fa-chevron-right ml-auto" /></a></li>
+								       {% endfor %}
+								</ul>
+							</div>
+
+							<!-- Main Nav Menu -->
+
+							<div class="main_nav_menu ml-auto">
+								<ul class="standard_dropdown main_nav_dropdown">
+									<li><a href="#">Home<i class="fas fa-chevron-down"></i></a></li>
+						
+									<li><a href="contact.html">Contact<i class="fas fa-chevron-down"></i></a></li>
+								</ul>
+							</div>
+
+							<!-- Menu Trigger -->
+
+							<div class="menu_trigger_container ml-auto">
+								<div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+									<div class="menu_burger">
+										<div class="menu_trigger_text">menu</div>
+										<div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		
+		<!-- Menu -->
+
+		<div class="page_menu">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						
+						<div class="page_menu_content">
+							
+							<div class="page_menu_search">
+								<form action="#">
+									<input type="search" required="required" class="page_menu_search_input" placeholder="Search for products...">
+								</form>
+							</div>
+							<ul class="page_menu_nav">
+								<li class="page_menu_item has-children">
+									<a href="#">Language<i class="fa fa-angle-down"></i></a>
+									<ul class="page_menu_selection">
+										<li><a href="#">English<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Italian<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Spanish<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Japanese<i class="fa fa-angle-down"></i></a></li>
+									</ul>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Currency<i class="fa fa-angle-down"></i></a>
+									<ul class="page_menu_selection">
+										<li><a href="#">US Dollar<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">EUR Euro<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">GBP British Pound<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">JPY Japanese Yen<i class="fa fa-angle-down"></i></a></li>
+									</ul>
+								</li>
+								<li class="page_menu_item">
+									<a href="#">Home<i class="fa fa-angle-down"></i></a>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Super Deals<i class="fa fa-angle-down"></i></a>
+									<ul class="page_menu_selection">
+										<li><a href="#">Super Deals<i class="fa fa-angle-down"></i></a></li>
+										<li class="page_menu_item has-children">
+											<a href="#">Menu Item<i class="fa fa-angle-down"></i></a>
+											<ul class="page_menu_selection">
+												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+												<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+											</ul>
+										</li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+									</ul>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Featured Brands<i class="fa fa-angle-down"></i></a>
+									<ul class="page_menu_selection">
+										<li><a href="#">Featured Brands<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+									</ul>
+								</li>
+								<li class="page_menu_item has-children">
+									<a href="#">Trending Styles<i class="fa fa-angle-down"></i></a>
+									<ul class="page_menu_selection">
+										<li><a href="#">Trending Styles<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+										<li><a href="#">Menu Item<i class="fa fa-angle-down"></i></a></li>
+									</ul>
+								</li>
+								<li class="page_menu_item"><a href="blog.html">blog<i class="fa fa-angle-down"></i></a></li>
+								<li class="page_menu_item"><a href="contact.html">contact<i class="fa fa-angle-down"></i></a></li>
+							</ul>
+							
+							<div class="menu_contact">
+								<div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/phone_white.png" alt=""></div>+38 068 005 3570</div>
+								<div class="menu_contact_item"><div class="menu_contact_icon"><img src="images/mail_white.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</header>
+	
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_background parallax-window" data-parallax="scroll" data-image-src="images/shop_background.jpg"></div>
+		<div class="home_overlay"></div>
+		<div class="home_content d-flex flex-column align-items-center justify-content-center">
+			<h2 class="home_title">{{brand.name}}</h2>
+		</div>
+	</div>
+
+	<!-- Shop -->
+
+	<div class="shop">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+
+					<!-- Shop Sidebar -->
+					<div class="shop_sidebar">
+						<div class="sidebar_section">
+							<div class="sidebar_title">Categories</div>
+							<ul class="sidebar_categories">
+								{% for brand in brands %}
+									                <li><a class="clc" href="#"> {{brand.name}}</a></li>
+							    {% endfor %}
+							</ul>
+						</div>
+						
+						
+					</div>
+
+				</div>
+
+				<div class="col-lg-9">
+					
+					<!-- Shop Content -->
+
+					<div class="shop_content">
+						<div class="shop_bar clearfix">
+							<div class="shop_product_count"> products found</div>
+							<div class="shop_sorting">
+								<span>Sort by:</span>
+								<ul>
+									<li>
+										<span class="sorting_text">highest rated<i class="fas fa-chevron-down"></span></i>
+										<ul>
+											<li class="shop_sorting_button" data-isotope-option='{ "sortBy": "original-order" }'>highest rated</li>
+											<li class="shop_sorting_button" data-isotope-option='{ "sortBy": "name" }'>name</li>
+											<li class="shop_sorting_button"data-isotope-option='{ "sortBy": "price" }'>price</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="product_grid">
+							<div class="product_grid_border"></div>
+
+							<!-- Product Item -->
+							{% for mobile in mobiles %}
+							<div class="product_item is_new">
+								<div class="product_border"></div>
+								<div class="product_image d-flex flex-column align-items-center justify-content-center"><img width="80px" height="100px" src="{{mobile.picture}}" alt=""></div>
+								<div class="product_content">
+									<div class="product_price">{{mobile.price}} Fcfa</div>
+									<div class="product_name"><div><a href="#" tabindex="0">{{mobile.description}}</a></div></div>
+								</div>
+								
+			
+							</div>
+							{% endfor %}	
+
+						</div>
+
+						<!-- Shop Page Navigation -->
+
+						<div class="shop_page_nav d-flex flex-row">
+							<div class="page_prev d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-left"></i></div>
+							<ul class="page_nav d-flex flex-row">
+								<li><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">...</a></li>
+								<li><a href="#">21</a></li>
+							</ul>
+							<div class="page_next d-flex flex-column align-items-center justify-content-center"><i class="fas fa-chevron-right"></i></div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+
+	<!-- Brands -->
+
+	<div class="brands">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="brands_slider_container">
+						
+						<!-- Brands Slider -->
+
+						<div class="owl-carousel owl-theme brands_slider">
+								    
+						{% for brand in brands %}
+							    <div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><a href="#"><img width="40px" height="60px" src="{{brand.logo}}" class="fas fa-chevron-right ml-auto" /></a></div></div>
+						{% endfor %}	
+
+						</div>
+						
+						<!-- Brands Slider Navigation -->
+						<div class="brands_nav brands_prev"><i class="fas fa-chevron-left"></i></div>
+						<div class="brands_nav brands_next"><i class="fas fa-chevron-right"></i></div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Newsletter -->
+
+	<div class="newsletter">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="newsletter_container d-flex flex-lg-row flex-column align-items-lg-center align-items-center justify-content-lg-start justify-content-center">
+						<div class="newsletter_title_container">
+							<div class="newsletter_icon"><img src="images/send.png" alt=""></div>
+							<div class="newsletter_title">Sign up for Newsletter</div>
+							<div class="newsletter_text"><p>...and receive %20 coupon for first shopping.</p></div>
+						</div>
+						<div class="newsletter_content clearfix">
+							<form action="#" class="newsletter_form">
+								<input type="email" class="newsletter_input" required="required" placeholder="Enter your email address">
+								<button class="newsletter_button">Subscribe</button>
+							</form>
+							<div class="newsletter_unsubscribe_link"><a href="#">unsubscribe</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+			<script src="http://127.0.0.1:8000/js/jquery-3.3.1.min.js"></script>
+			<script src="http://127.0.0.1:8000/styles/bootstrap4/popper.js"></script>
+			<script src="http://127.0.0.1:8000/styles/bootstrap4/bootstrap.min.js"></script>
+			<script src="http://127.0.0.1:8000/plugins/greensock/TweenMax.min.js"></script>
+			<script src="http://127.0.0.1:8000/plugins/greensock/TimelineMax.min.js"></script>
+			<script src="http://127.0.0.1:8000/plugins/scrollmagic/ScrollMagic.min.js"></script>
+			<script src="http://127.0.0.1:8000/plugins/greensock/animation.gsap.min.js"></script>
+			<script src="http://127.0.0.1:8000/plugins/greensock/ScrollToPlugin.min.js"></script>
+			<script src="http://127.0.0.1:8000/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+			<script src="http://127.0.0.1:8000/plugins/easing/easing.js"></script>
+			<script src="http://127.0.0.1:8000/plugins/Isotope/isotope.pkgd.min.js"></script>
+			<script src="http://127.0.0.1:8000/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+			<script src="http://127.0.0.1:8000/plugins/parallax-js-master/parallax.min.js"></script>
+			<script src="http://127.0.0.1:8000/js/shop_custom.js"></script>
+{% endblock %}
+
+
