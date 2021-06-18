@@ -80,7 +80,7 @@
 												<ul class="custom_list clc">
 													<li><a class="clc" href="#">All Categories</a></li>
 													{% for brand in brands %}
-									                <li><a class="clc" href="#"> {{brand.name}}</a></li>
+									                <li><a class="clc" href=""> {{brand.name}}</a></li>
 								                    {% endfor %}
 												</ul>
 											</div>
@@ -119,7 +119,7 @@
 
 								<ul class="cat_menu">
 								    {% for brand in brands %}
-									     <li><a href="#"> {{brand.name}} <img width="40px" src="{{brand.logo}}" class="fas fa-chevron-right ml-auto" /></a></li>
+									     <li><a href="http://127.0.0.1:8000/brand/{{brand.id}}"> {{brand.name}} <img width="40px" src="{{brand.logo}}" class="fas fa-chevron-right ml-auto" /></a></li>
 								    {% endfor %}
 								</ul>
 							</div>
@@ -288,7 +288,7 @@
                                                 <!--
 													<div class="bestsellers_category"><a href="#"></a></div>
                                                 -->				
-													<div class="bestsellers_name"><a href="product.html">{{mobile.description}}</a></div>
+													<div class="bestsellers_name"><a href="http://127.0.0.1:8000/mobile/{{mobile.id}}">{{mobile.description}}</a></div>
 												<!--
 													<div class="rating_r rating_r_4 bestsellers_rating"><i></i><i></i><i></i><i></i><i></i></div>
 												-->
@@ -327,7 +327,7 @@
 						<div class="owl-carousel owl-theme brands_slider">
 								    
 						    {% for brand in brands %}
-							    <div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><a href="#"><img width="40px" height="60px" src="{{brand.logo}}" class="fas fa-chevron-right ml-auto" /></a></div></div>
+							    <div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><a href="http://127.0.0.1:8000/brand/{{brand.id}}"><img width="40px" height="60px" src="{{brand.logo}}" class="fas fa-chevron-right ml-auto" /></a></div></div>
 						    {% endfor %}
 
 						</div>
@@ -453,9 +453,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	{% endblock %}
 </div>
 
-{% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-			<script src="http://127.0.0.1:8000/js/jquery-3.3.1.min.js"></script>
+
+<script src="http://127.0.0.1:8000/js/jquery-3.3.1.min.js"></script>
 <script src="http://127.0.0.1:8000/styles/bootstrap4/popper.js"></script>
 <script src="http://127.0.0.1:8000/styles/bootstrap4/bootstrap.min.js"></script>
 <script src="http://127.0.0.1:8000/plugins/greensock/TweenMax.min.js"></script>
@@ -467,11 +466,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="http://127.0.0.1:8000/plugins/slick-1.8.0/slick.js"></script>
 <script src="http://127.0.0.1:8000/plugins/easing/easing.js"></script>
 <script src="http://127.0.0.1:8000/js/custom.js"></script>
-        {% endblock %}
+
 
 
 </body>
 
 
 
+{% endblock %}
+{% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
 {% endblock %}

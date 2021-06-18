@@ -90,9 +90,9 @@ class Mobile
         return $this;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?string
     {
-        return $this->date;
+        return $this->date->format("d-M-Y");
     }
 
     public function setDate(\DateTimeInterface $date): self
